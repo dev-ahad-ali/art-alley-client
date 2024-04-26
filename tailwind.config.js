@@ -2,7 +2,13 @@
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                'lobster': '"Lobster Two", sans-serif',
+                'yeseva': '"Yeseva One", serif',
+                'instrument': '"Instrument Sans", sans-serif',
+            },
+        },
     },
     plugins: [require('daisyui')],
     daisyui: {
