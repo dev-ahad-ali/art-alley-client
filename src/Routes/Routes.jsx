@@ -10,6 +10,7 @@ import AllArts from '../Pages/AllArts';
 import ArtDetails from '../Pages/ArtDetails';
 import { myArtLoader, oneArtLoader } from '../Utils/LoaderHandle';
 import MyArts from '../Pages/MyArts';
+import SubCategory from '../Pages/SubCategory';
 
 export const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: myArtLoader,
+            },
+            {
+                path: '/subcategory/:category',
+                element: <SubCategory />,
             },
         ],
     },

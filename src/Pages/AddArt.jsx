@@ -53,9 +53,18 @@ const AddArt = () => {
                     <option value={''} disabled selected>
                         Subcategory....
                     </option>
-                    <option value={'cat 1'}>cat 1</option>
-                    <option value={'cat 2'}>cat 2</option>
-                    <option value={'cat 3'}>cat 3</option>
+                    <option value={'Landscape_Painting'}>
+                        Landscape Painting
+                    </option>
+                    <option value={'Portrait_Drawing'}>Portrait Drawing</option>
+                    <option value={'Watercolour_Painting'}>
+                        Watercolour Painting
+                    </option>
+                    <option value={'Oil_Painting'}>Oil Painting</option>
+                    <option value={'Charcoal_Sketching'}>
+                        Charcoal Sketching
+                    </option>
+                    <option value={'Cartoon_Drawing'}>Cartoon Drawing</option>
                 </select>
                 <input
                     type='text'
