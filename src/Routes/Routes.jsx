@@ -4,6 +4,7 @@ import Home from '../Pages/Home';
 import Error from '../Pages/Error';
 import AddArt from '../Pages/AddArt';
 import Registration from '../Pages/Registration';
+import Login from '../Pages/Login';
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 path: '/registration',
                 element: <Registration />,
+            },
+            {
+                path: '/login',
+                element: <Login />,
             },
         ],
     },

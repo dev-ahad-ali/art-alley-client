@@ -1,6 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const Navbar = () => {
+    const { user, loading } = useAuth();
     const navLinks = (
         <>
             <li className=''>
@@ -63,7 +65,7 @@ const Navbar = () => {
             </div>
             <Link
                 to={'/'}
-                className='font-lobster flex items-center justify-center text-4xl font-bold'
+                className='flex items-center justify-center font-lobster text-4xl font-bold'
             >
                 <img
                     src='./logo.png'
@@ -73,11 +75,19 @@ const Navbar = () => {
                 <span className='relative'>ArtAlley</span>
             </Link>
             <div className='me-4 flex items-center justify-end gap-3'>
-                <div className='avatar'>
-                    <div className='w-8 rounded-md ring ring-primary ring-offset-2 ring-offset-base-100'>
-                        <img src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+                {loading ? (
+                    <span className='loading loading-infinity text-success'></span>
+                ) : user ? (
+                    <div className='avatar'>
+                        <div className='w-8 rounded-md ring ring-primary ring-offset-2 ring-offset-base-100'>
+                            <img src={user?.photoURL} />
+                        </div>
                     </div>
-                </div>
+                ) : (
+                    <Link to={'/login'}>
+                        <button className='btn btn-neutral'>Login</button>
+                    </Link>
+                )}
                 <label className='grid cursor-pointer place-items-center'>
                     <input
                         type='checkbox'
