@@ -6,6 +6,7 @@ import AddArt from '../Pages/AddArt';
 import Registration from '../Pages/Registration';
 import Login from '../Pages/Login';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import AllArts from '../Pages/AllArts';
 
 export const router = createBrowserRouter([
     {
@@ -25,7 +26,6 @@ export const router = createBrowserRouter([
                 path: '/login',
                 element: <Login />,
             },
-
             {
                 path: '/addArt',
                 element: (
@@ -33,6 +33,10 @@ export const router = createBrowserRouter([
                         <AddArt />
                     </PrivateRoute>
                 ),
+            },
+            {
+                path: '/allArts',
+                element: <AllArts />,
             },
         ],
     },
