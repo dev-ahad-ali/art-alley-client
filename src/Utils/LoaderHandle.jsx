@@ -12,3 +12,9 @@ export const myArtLoader = async ({ params }) => {
     const data = await axios.get(`${url}/myArt/${params.email}`);
     return data;
 };
+
+// Subcategory data
+export const subcategoryLoader = async ({ params }) => {
+    const data = await axios.get(`${url}/subcategory/${params.category}`);
+    return data;
+};

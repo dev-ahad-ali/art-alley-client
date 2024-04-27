@@ -8,7 +8,11 @@ import Login from '../Pages/Login';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import AllArts from '../Pages/AllArts';
 import ArtDetails from '../Pages/ArtDetails';
-import { myArtLoader, oneArtLoader } from '../Utils/LoaderHandle';
+import {
+    myArtLoader,
+    oneArtLoader,
+    subcategoryLoader,
+} from '../Utils/LoaderHandle';
 import MyArts from '../Pages/MyArts';
 import SubCategory from '../Pages/SubCategory';
 
@@ -63,6 +67,7 @@ export const router = createBrowserRouter([
             {
                 path: '/subcategory/:category',
                 element: <SubCategory />,
+                loader: subcategoryLoader,
             },
         ],
     },
