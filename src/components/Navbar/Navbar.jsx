@@ -1,6 +1,31 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+    const navLinks = (
+        <>
+            <li className=''>
+                <NavLink
+                    to={'/'}
+                    className={({ isActive }) => {
+                        isActive ? 'bg-white' : 'bg-white';
+                    }}
+                >
+                    Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    to={'/addArt'}
+                    className={({ isActive }) => {
+                        isActive ? 'bg-white' : 'bg-white';
+                    }}
+                >
+                    Add Art
+                </NavLink>
+            </li>
+        </>
+    );
+
     return (
         <div className='m-2 grid grid-cols-3 items-center rounded-full bg-white p-2 shadow-xl'>
             <div className='lg:hidden'>
@@ -29,48 +54,12 @@ const Navbar = () => {
                         tabIndex={0}
                         className='menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow'
                     >
-                        <li>
-                            <a>Item 1</a>
-                        </li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className='p-2'>
-                                <li>
-                                    <a>Submenu 1</a>
-                                </li>
-                                <li>
-                                    <a>Submenu 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a>Item 3</a>
-                        </li>
+                        {navLinks}
                     </ul>
                 </div>
             </div>
             <div className='hidden lg:flex'>
-                <ul className='menu menu-horizontal px-1'>
-                    <li>
-                        <a>Item 1</a>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul className='p-2'>
-                                <li>
-                                    <a>Submenu 1</a>
-                                </li>
-                                <li>
-                                    <a>Submenu 2</a>
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <a>Item 3</a>
-                    </li>
-                </ul>
+                <ul className='menu menu-horizontal px-1'>{navLinks}</ul>
             </div>
             <Link
                 to={'/'}
