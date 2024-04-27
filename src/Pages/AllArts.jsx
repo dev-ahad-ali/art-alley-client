@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { url } from '../Utils/Url';
+import AllArtsCard from '../components/Cards/AllArtsCard';
 
 const AllArts = () => {
     const [arts, setArts] = useState([]);
     const [artsLoading, setArtsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/allArts').then((result) => {
+        axios.get(`${url}/allArts`).then((result) => {
             setArts(result.data);
             setArtsLoading(false);
         });
@@ -20,7 +22,7 @@ const AllArts = () => {
         <div>
             <h2 className='text-2xl'>All arts</h2>
             {arts.map((art) => (
-                <p key={art._id}>{art?.itemName}</p>
+                <AllArtsCard key={art._id} art={art} />
             ))}
         </div>
     );

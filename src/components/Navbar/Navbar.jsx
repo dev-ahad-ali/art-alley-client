@@ -25,6 +25,16 @@ const Navbar = () => {
                     Add Art
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    to={'/allArts'}
+                    className={({ isActive }) => {
+                        isActive ? 'bg-white' : 'bg-white';
+                    }}
+                >
+                    All Arts
+                </NavLink>
+            </li>
         </>
     );
 
