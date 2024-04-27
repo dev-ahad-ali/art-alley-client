@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
+
 const AllArtsCard = ({ art }) => {
     const {
+        _id,
         imageUrl,
         itemName,
         subcategory,
@@ -22,7 +25,10 @@ const AllArtsCard = ({ art }) => {
                 <h2 className='card-title'>{itemName}</h2>
                 <p>{subcategory}</p>
                 <div className='card-actions justify-end'>
-                    <button className='btn btn-primary'>Details</button>
+                    <Link to={`/allArts/${_id}`}>
+                        {' '}
+                        <button className='btn btn-primary'>Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

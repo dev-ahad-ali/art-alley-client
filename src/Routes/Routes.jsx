@@ -7,6 +7,9 @@ import Registration from '../Pages/Registration';
 import Login from '../Pages/Login';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import AllArts from '../Pages/AllArts';
+import ArtDetails from '../Pages/ArtDetails';
+import { myArtLoader, oneArtLoader } from '../Utils/LoaderHandle';
+import MyArts from '../Pages/MyArts';
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +40,24 @@ export const router = createBrowserRouter([
             {
                 path: '/allArts',
                 element: <AllArts />,
+            },
+            {
+                path: '/allArts/:_id',
+                element: (
+                    <PrivateRoute>
+                        <ArtDetails />
+                    </PrivateRoute>
+                ),
+                loader: oneArtLoader,
+            },
+            {
+                path: '/myArts/:email',
+                element: (
+                    <PrivateRoute>
+                        <MyArts />
+                    </PrivateRoute>
+                ),
+                loader: myArtLoader,
             },
         ],
     },

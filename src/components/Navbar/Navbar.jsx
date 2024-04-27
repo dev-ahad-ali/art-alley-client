@@ -35,6 +35,16 @@ const Navbar = () => {
                     All Arts
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    to={`/myArts/${user?.email}`}
+                    className={({ isActive }) => {
+                        isActive ? 'bg-white' : 'bg-white';
+                    }}
+                >
+                    My arts
+                </NavLink>
+            </li>
         </>
     );
 
