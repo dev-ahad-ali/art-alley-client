@@ -88,6 +88,9 @@ const Navbar = () => {
                         <button className='btn btn-neutral'>Login</button>
                     </Link>
                 )}
+                <Link to={'/registration'}>
+                    <button className='btn btn-accent'>Register</button>
+                </Link>
                 <label className='grid cursor-pointer place-items-center'>
                     <input
                         type='checkbox'
