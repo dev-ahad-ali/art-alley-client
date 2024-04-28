@@ -1,55 +1,56 @@
 import { Link, NavLink } from 'react-router-dom';
-import useAuth from '../../Hooks/useAuth';
+import { IoIosHome } from 'react-icons/io';
+import { MdLibraryAdd } from 'react-icons/md';
+import { DiGhostSmall } from 'react-icons/di';
+import UserMenu from './UserMenu';
 
 const Navbar = () => {
-    const { user, loading } = useAuth();
     const navLinks = (
         <>
-            <li className=''>
+            <li>
                 <NavLink
                     to={'/'}
-                    className={({ isActive }) => {
-                        isActive ? 'bg-white' : 'bg-white';
-                    }}
+                    className={({ isActive }) =>
+                        isActive
+                            ? 'flex items-center gap-1 bg-white text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
+                            : 'flex items-center gap-1 bg-white text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
+                    }
                 >
+                    <IoIosHome className='text-xl' />
                     Home
                 </NavLink>
             </li>
             <li>
                 <NavLink
-                    to={'/addArt'}
-                    className={({ isActive }) => {
-                        isActive ? 'bg-white' : 'bg-white';
-                    }}
-                >
-                    Add Art
-                </NavLink>
-            </li>
-            <li>
-                <NavLink
                     to={'/allArts'}
-                    className={({ isActive }) => {
-                        isActive ? 'bg-white' : 'bg-white';
-                    }}
+                    className={({ isActive }) =>
+                        isActive
+                            ? 'flex items-center gap-1 bg-white text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
+                            : 'flex items-center gap-1 bg-white text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
+                    }
                 >
+                    <DiGhostSmall className='text-xl' />
                     All Arts
                 </NavLink>
             </li>
             <li>
                 <NavLink
-                    to={`/myArts/${user?.email}`}
-                    className={({ isActive }) => {
-                        isActive ? 'bg-white' : 'bg-white';
-                    }}
+                    to={'/addArt'}
+                    className={({ isActive }) =>
+                        isActive
+                            ? 'flex items-center gap-1 bg-white text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
+                            : 'flex items-center gap-1 bg-white text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
+                    }
                 >
-                    My arts
+                    <MdLibraryAdd className='text-xl' />
+                    Add Art
                 </NavLink>
             </li>
         </>
     );
 
     return (
-        <div className='m-2 grid grid-cols-3 items-center rounded-full bg-white p-2 shadow-xl'>
+        <div className='sticky top-0 grid grid-cols-3 items-center bg-white px-5 py-2'>
             <div className='lg:hidden'>
                 <div className='dropdown'>
                     <div
@@ -74,18 +75,20 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className='menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow'
+                        className=' dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow'
                     >
                         {navLinks}
                     </ul>
                 </div>
             </div>
             <div className='hidden lg:flex'>
-                <ul className='menu menu-horizontal px-1'>{navLinks}</ul>
+                <ul className='menu-horizontal flex items-center gap-6 px-1 hover:bg-transparent'>
+                    {navLinks}
+                </ul>
             </div>
             <Link
                 to={'/'}
-                className='flex items-center justify-center font-lobster text-4xl font-bold'
+                className='flex items-center justify-center font-lobster text-4xl font-bold text-amber-900'
             >
                 <img
                     src='./logo.png'
@@ -94,23 +97,8 @@ const Navbar = () => {
                 />
                 <span className='relative'>ArtAlley</span>
             </Link>
-            <div className='me-4 flex items-center justify-end gap-3'>
-                {loading ? (
-                    <span className='loading loading-infinity text-success'></span>
-                ) : user ? (
-                    <div className='avatar'>
-                        <div className='w-8 rounded-md ring ring-primary ring-offset-2 ring-offset-base-100'>
-                            <img src={user?.photoURL} />
-                        </div>
-                    </div>
-                ) : (
-                    <Link to={'/login'}>
-                        <button className='btn btn-neutral'>Login</button>
-                    </Link>
-                )}
-                <Link to={'/registration'}>
-                    <button className='btn btn-accent'>Register</button>
-                </Link>
+            <div className='flex items-center justify-end gap-3'>
+                <UserMenu />
                 <label className='grid cursor-pointer place-items-center'>
                     <input
                         type='checkbox'
