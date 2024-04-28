@@ -1,10 +1,23 @@
 import { Link } from 'react-router-dom';
 import Banner from '../components/Banner/Banner';
+import Exhibition from '../components/Exhibition/Exhibition';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { url } from '../Utils/Url';
 
 const Home = () => {
+    const [artData, setArtData] = useState([]);
+    const [dataLoading, setDataLoading] = useState(true);
+    useEffect(() => {
+        axios.get(`${url}/allArts`).then((data) => {
+            setArtData(data.data);
+            setDataLoading(false);
+        });
+    }, []);
     return (
         <>
-            <Banner />
+            <Banner artData={artData} dataLoading={dataLoading} />
+            <Exhibition artData={artData} />
             <div>
                 <h2 className='text-2xl'>this is Home</h2>
                 <Link

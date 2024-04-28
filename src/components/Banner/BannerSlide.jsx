@@ -9,7 +9,7 @@ const BannerSlide = ({ slide }) => {
                     <h2 className='absolute top-16 z-10 font-yeseva text-[80px]'>
                         {slide.itemName}
                     </h2>
-                    <p className='max-w-[350px]'>
+                    <p className='max-w-[400px]'>
                         {slide?.description.slice(0, 180)}....
                     </p>
                 </div>
