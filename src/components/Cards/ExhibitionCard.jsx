@@ -1,8 +1,10 @@
 import { FaEdit, FaStar } from 'react-icons/fa';
 import { GrFormNextLink } from 'react-icons/gr';
-import { Link } from 'react-router-dom';
+import { RiDeleteBin2Fill, RiFileEditFill } from 'react-icons/ri';
+import { Link, useLocation } from 'react-router-dom';
 
 const ExhibitionCard = ({ art }) => {
+    const location = useLocation();
     const {
         imageUrl,
         itemName,
@@ -25,6 +27,26 @@ const ExhibitionCard = ({ art }) => {
                 <span className='absolute right-3 top-3 rounded-full bg-green-500 px-2 py-1 text-xs font-medium capitalize text-white/85'>
                     {stockStatus}
                 </span>
+                {location.state === 'My Art' && (
+                    <div className='absolute left-3 top-3 flex items-center gap-4'>
+                        <div
+                            className='tooltip tooltip-bottom tooltip-error'
+                            data-tip='Delete'
+                        >
+                            <button className='btn btn-circle btn-error btn-sm'>
+                                <RiDeleteBin2Fill className='text-xl text-white' />
+                            </button>
+                        </div>
+                        <div
+                            className='tooltip tooltip-bottom tooltip-warning'
+                            data-tip='Update'
+                        >
+                            <button className='btn btn-circle btn-warning btn-sm'>
+                                <RiFileEditFill className='text-xl text-white' />
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
             <div className='p-4'>
                 <div className='flex items-center justify-between'>
