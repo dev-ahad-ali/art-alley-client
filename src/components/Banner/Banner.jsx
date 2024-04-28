@@ -12,9 +12,21 @@ import SwiperNavigation from './SwiperNavigation';
 
 const Banner = () => {
     const [slideData, setSlideData] = useState([]);
+    const [dataLoading, setDataLoading] = useState(true);
     useEffect(() => {
-        axios.get(`${url}/allArts`).then((data) => setSlideData(data.data));
+        axios.get(`${url}/allArts`).then((data) => {
+            setSlideData(data.data);
+            setDataLoading(false);
+        });
     }, []);
+    if (dataLoading) {
+        return (
+            <div className='grid min-h-screen min-w-full place-items-center bg-white'>
+                {' '}
+                <span className='loading loading-ring  w-[120px] text-success'></span>
+            </div>
+        );
+    }
     return (
         <div className='px-4 py-16'>
             <Swiper

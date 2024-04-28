@@ -50,7 +50,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className='sticky top-0 grid grid-cols-3 items-center bg-white px-5 py-2'>
+        <div className='fixed z-20 grid w-full grid-cols-3 items-center border-b bg-white px-5 py-4'>
             <div className='lg:hidden'>
                 <div className='dropdown'>
                     <div

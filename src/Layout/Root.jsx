@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Root = () => {
     return (
         <>
-            <header>
+            <header className='h-[75px]'>
                 <Navbar />
             </header>
             <Outlet />
