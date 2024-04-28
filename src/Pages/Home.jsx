@@ -4,6 +4,12 @@ import Exhibition from '../components/Exhibition/Exhibition';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { url } from '../Utils/Url';
+import LandscapePainting from '../components/Subcategories/LandscapePainting';
+import PortraitDrawing from '../components/Subcategories/ProtraitDrawing';
+import WatercolourPainting from '../components/Subcategories/WatercolourPainting';
+import OilPainting from '../components/Subcategories/OilPainting';
+import CharcoalSketching from '../components/Subcategories/CharcoalSketching';
+import CartoonDrawing from '../components/Subcategories/CartoonDrawing';
 
 const Home = () => {
     const [artData, setArtData] = useState([]);
@@ -18,42 +24,19 @@ const Home = () => {
         <>
             <Banner artData={artData} dataLoading={dataLoading} />
             <Exhibition artData={artData} />
-            <div>
-                <h2 className='text-2xl'>this is Home</h2>
-                <Link
-                    to={'/subcategory/Landscape_Painting'}
-                    state={'Landscape Painting'}
-                >
-                    Landscape Painting
-                </Link>
-                <Link
-                    to={'/subcategory/Portrait_Drawing'}
-                    state={'Portrait Drawing'}
-                >
-                    Portrait Drawing
-                </Link>
-                <Link
-                    to={'/subcategory/Watercolour_Painting'}
-                    state={'Watercolour Painting'}
-                >
-                    Watercolour Painting
-                </Link>
-                <Link to={'/subcategory/Oil_Painting'} state={'Oil Painting'}>
-                    Oil Painting
-                </Link>
-                <Link
-                    to={'/subcategory/Charcoal_Sketching'}
-                    state={'Charcoal Sketching'}
-                >
-                    Charcoal Sketching
-                </Link>
-                <Link
-                    to={'/subcategory/Cartoon_Drawing'}
-                    state={'Cartoon Drawing'}
-                >
-                    Cartoon Drawing
-                </Link>
-            </div>
+            <section>
+                <h2 className='mt-16 text-center font-yeseva text-[80px]'>
+                    Categories
+                </h2>
+                <div className='mx-auto mt-16 grid max-w-7xl grid-cols-3 gap-4 px-4'>
+                    <LandscapePainting />
+                    <PortraitDrawing />
+                    <WatercolourPainting />
+                    <OilPainting />
+                    <CharcoalSketching />
+                    <CartoonDrawing />
+                </div>
+            </section>
         </>
     );
 };

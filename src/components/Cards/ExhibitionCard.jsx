@@ -1,22 +1,40 @@
-import { FaStar } from 'react-icons/fa';
+import { FaEdit, FaStar } from 'react-icons/fa';
 import { GrFormNextLink } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 
 const ExhibitionCard = ({ art }) => {
-    const { imageUrl, itemName, subcategory, userName, rating, price, _id } =
-        art;
+    const {
+        imageUrl,
+        itemName,
+        subcategory,
+        userName,
+        rating,
+        price,
+        _id,
+        stockStatus,
+        customization,
+    } = art;
     return (
-        <div className='group overflow-hidden rounded-3xl bg-amber-950 bg-opacity-30 duration-300 hover:shadow-xl'>
-            <div className='h-[240px]'>
+        <div className='group overflow-hidden rounded-3xl bg-yellow-800 bg-opacity-30 duration-300 hover:shadow-xl'>
+            <div className='relative h-[240px]'>
                 <img
                     className='h-full w-full rounded-t-3xl duration-300 group-hover:scale-110'
                     src={imageUrl}
                     alt=''
                 />
+                <span className='absolute right-3 top-3 rounded-full bg-green-500 px-2 py-1 text-xs font-medium capitalize text-white/85'>
+                    {stockStatus}
+                </span>
             </div>
             <div className='p-4'>
-                <div className='badge badge-neutral badge-outline p-3'>
-                    {subcategory}
+                <div className='flex items-center justify-between'>
+                    <div className='badge badge-neutral badge-outline p-3'>
+                        {subcategory}
+                    </div>
+                    <p className='flex items-center gap-1 text-sm font-bold capitalize text-gray-600 opacity-80'>
+                        <FaEdit />
+                        Customization : {customization}
+                    </p>
                 </div>
                 <div className='mt-2'>
                     <h3 className='font-yeseva text-2xl'>{itemName}</h3>
