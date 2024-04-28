@@ -16,6 +16,24 @@ const Home = () => {
             >
                 Portrait Drawing
             </Link>
+            <Link
+                to={'/subcategory/Watercolour_Painting'}
+                state={'Watercolour Painting'}
+            >
+                Watercolour Painting
+            </Link>
+            <Link to={'/subcategory/Oil_Painting'} state={'Oil Painting'}>
+                Oil Painting
+            </Link>
+            <Link
+                to={'/subcategory/Charcoal_Sketching'}
+                state={'Charcoal Sketching'}
+            >
+                Charcoal Sketching
+            </Link>
+            <Link to={'/subcategory/Cartoon_Drawing'} state={'Cartoon Drawing'}>
+                Cartoon Drawing
+            </Link>
         </div>
     );
 };

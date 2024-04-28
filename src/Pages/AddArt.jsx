@@ -29,6 +29,7 @@ const AddArt = () => {
                 toast.success('Art added successfully');
             }
         });
+        reset();
     };
 
     return (
@@ -87,6 +88,9 @@ const AddArt = () => {
                     </option>
                     <option value={'1'}>1 day</option>
                     <option value={'2'}>2 day</option>
+                    <option value={'3'}>3 day</option>
+                    <option value={'4'}>4 day</option>
+                    <option value={'5'}>5 day</option>
                 </select>
                 <select
                     className='select select-bordered w-full max-w-xs'
@@ -98,12 +102,12 @@ const AddArt = () => {
                     <option value={'yes'}>Yes</option>
                     <option value={'no'}>No</option>
                 </select>
-                <input
+                <textarea
                     type='text'
                     placeholder='Description'
                     className='input input-bordered w-full max-w-xs'
                     {...register('description')}
-                />
+                ></textarea>
                 <select
                     className='select select-bordered w-full max-w-xs'
                     {...register('stockStatus')}

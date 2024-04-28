@@ -19,7 +19,7 @@ const AllArtsCard = ({ art }) => {
     return (
         <div className='card bg-base-100 shadow-xl lg:card-side'>
             <figure>
-                <img src={imageUrl} />
+                <img className='w-52' src={imageUrl} />
             </figure>
             <div className='card-body'>
                 <h2 className='card-title'>{itemName}</h2>
