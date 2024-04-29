@@ -3,7 +3,7 @@ import { GrFormNextLink } from 'react-icons/gr';
 import { RiDeleteBin2Fill, RiFileEditFill } from 'react-icons/ri';
 import { Link, useLocation } from 'react-router-dom';
 
-const ExhibitionCard = ({ art }) => {
+const ExhibitionCard = ({ art, showModal, setShowModal, setModalData }) => {
     const location = useLocation();
     const {
         imageUrl,
@@ -38,6 +38,10 @@ const ExhibitionCard = ({ art }) => {
                             </button>
                         </div>
                         <div
+                            onClick={() => {
+                                setShowModal(!showModal);
+                                setModalData(art);
+                            }}
                             className='tooltip tooltip-bottom tooltip-warning'
                             data-tip='Update'
                         >
