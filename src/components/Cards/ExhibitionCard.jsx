@@ -3,7 +3,14 @@ import { GrFormNextLink } from 'react-icons/gr';
 import { RiDeleteBin2Fill, RiFileEditFill } from 'react-icons/ri';
 import { Link, useLocation } from 'react-router-dom';
 
-const ExhibitionCard = ({ art, showModal, setShowModal, setModalData }) => {
+const ExhibitionCard = ({
+    art,
+    showModal,
+    setShowModal,
+    setModalData,
+    showDelete,
+    setShowDelete,
+}) => {
     const location = useLocation();
     const {
         imageUrl,
@@ -30,6 +37,10 @@ const ExhibitionCard = ({ art, showModal, setShowModal, setModalData }) => {
                 {location.state === 'My Art' && (
                     <div className='absolute left-3 top-3 flex items-center gap-4'>
                         <div
+                            onClick={() => {
+                                setShowDelete(!showDelete);
+                                setModalData(art);
+                            }}
                             className='tooltip tooltip-bottom tooltip-error'
                             data-tip='Delete'
                         >

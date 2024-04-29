@@ -5,6 +5,7 @@ import { ImMenu2 } from 'react-icons/im';
 import UpdateModal from '../components/UpdateModal/UpdateModal';
 import axios from 'axios';
 import { url } from '../Utils/Url';
+import DeleteModal from '../components/DeleteModal/DeleteModal';
 
 const MyArts = () => {
     const params = useParams();
@@ -12,6 +13,7 @@ const MyArts = () => {
     const [category, setCategory] = useState('all');
     const [myArtLoading, setMyArtLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
+    const [showDelete, setShowDelete] = useState(false);
     const [modalData, setModalData] = useState({});
     const [refetch, setRefetch] = useState(true);
 
@@ -124,6 +126,8 @@ const MyArts = () => {
                             showModal={showModal}
                             setShowModal={setShowModal}
                             setModalData={setModalData}
+                            showDelete={showDelete}
+                            setShowDelete={setShowDelete}
                         />
                     ))}
                 </div>
@@ -135,6 +139,15 @@ const MyArts = () => {
                     modalData={modalData}
                     showModal={showModal}
                     setShowModal={setShowModal}
+                />
+            )}
+            {showDelete && (
+                <DeleteModal
+                    refetch={refetch}
+                    setRefetch={setRefetch}
+                    modalData={modalData}
+                    showDelete={showDelete}
+                    setShowDelete={setShowDelete}
                 />
             )}
         </>

@@ -67,8 +67,6 @@ const UpdateModal = ({
             }
         });
         console.log(refetch);
-        // reset();
-        // console.log(data);
     };
     return (
         <div className='fixed inset-0 grid h-screen w-screen place-items-center bg-gray-400/40'>
