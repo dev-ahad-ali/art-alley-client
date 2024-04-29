@@ -13,12 +13,7 @@ const UpdateModal = ({
     refetch,
     setRefetch,
 }) => {
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const {
         _id,
