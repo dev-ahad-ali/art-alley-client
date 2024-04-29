@@ -44,7 +44,7 @@ const UserMenu = () => {
                                 </h3>
                                 <NavLink
                                     state={'My Art'}
-                                    to={`/myArts/${user?.email}`}
+                                    to={`/myArts/${user?.email || user.providerData[0].email}`}
                                     className={
                                         'mt-2 flex items-center gap-2 py-1 text-sm font-bold  uppercase text-blue-600 hover:text-amber-700 hover:underline'
                                     }

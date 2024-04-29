@@ -1,5 +1,5 @@
 import {
-    GithubAuthProvider,
+    FacebookAuthProvider,
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
     onAuthStateChanged,
@@ -14,7 +14,9 @@ import auth from '../firebase/firebase.config';
 export const AuthContext = createContext(null);
 // social auth provider
 const googleProvider = new GoogleAuthProvider();
-const githubProvider = new GithubAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+googleProvider.addScope('https://www.googleapis.com/auth/userinfo.email');
+facebookProvider.addScope('email');
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -38,11 +40,12 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider);
     };
 
-    // Github Sign in
-    const githubSignIn = () => {
+    //Facebook sign in
+    const facebookSignIn = () => {
         setLoading(true);
-        return signInWithPopup(auth, githubProvider);
+        return signInWithPopup(auth, facebookProvider);
     };
+
     // Update current user
     const updateUserProfile = (Name, PhotoURL) => {
         return updateProfile(auth.currentUser, {
@@ -74,12 +77,12 @@ const AuthProvider = ({ children }) => {
         signInUser,
         updateUserProfile,
         googleSignIn,
-        githubSignIn,
         logOut,
         user,
         loading,
         setLoading,
         setUser,
+        facebookSignIn,
     };
     return (
         <AuthContext.Provider value={allProperties}>
