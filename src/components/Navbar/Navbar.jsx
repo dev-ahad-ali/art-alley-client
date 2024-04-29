@@ -3,8 +3,11 @@ import { IoIosHome } from 'react-icons/io';
 import { MdLibraryAdd } from 'react-icons/md';
 import { DiGhostSmall } from 'react-icons/di';
 import UserMenu from './UserMenu';
+import { BsBarChartSteps } from 'react-icons/bs';
+import useAuth from '../../Hooks/useAuth';
 
 const Navbar = () => {
+    const { user } = useAuth();
     const navLinks = (
         <>
             <li>
@@ -91,13 +94,25 @@ const Navbar = () => {
                 className='flex items-center justify-center font-lobster text-4xl font-bold text-amber-900'
             >
                 <img
-                    src='./logo.png'
+                    src='https://i.ibb.co/FmpLrHr/logo.png'
                     alt=''
                     className='relative bottom-2 h-6 w-6'
                 />
                 <span className='relative'>ArtAlley</span>
             </Link>
-            <div className='flex items-center justify-end gap-3'>
+            <div className='flex items-center justify-end gap-4'>
+                <NavLink
+                    state={'My Art'}
+                    to={`/myArts/${user?.email || user?.providerData[0]?.email}`}
+                    className={({ isActive }) =>
+                        isActive
+                            ? 'me-2 flex items-center gap-2 py-1 text-sm font-bold  uppercase text-amber-700 underline'
+                            : 'me-2 flex items-center gap-2 py-1 text-sm font-bold  uppercase hover:text-amber-700 hover:underline'
+                    }
+                >
+                    <BsBarChartSteps className='text-lg' />
+                    My Arts
+                </NavLink>
                 <UserMenu />
                 <label className='grid cursor-pointer place-items-center'>
                     <input

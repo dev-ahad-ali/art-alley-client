@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Banner from '../components/Banner/Banner';
 import Exhibition from '../components/Exhibition/Exhibition';
 import { useEffect, useState } from 'react';

@@ -5,7 +5,6 @@ import { Tooltip } from 'react-tooltip';
 import { FaUserEdit } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
 import { FiUserCheck } from 'react-icons/fi';
-import { BsBarChartSteps } from 'react-icons/bs';
 
 const UserMenu = () => {
     const { user, loading, logOut } = useAuth();
@@ -36,48 +35,36 @@ const UserMenu = () => {
                     anchorSelect='#clickable'
                     clickable
                 >
-                    <div className='grid grid-cols-2 gap-2 space-y-2'>
+                    <div className='space-y-2'>
                         {user && (
-                            <div className='border-e-2 border-black'>
+                            <div>
                                 <h3 className='text-lg font-medium underline'>
                                     {user?.displayName}
                                 </h3>
-                                <NavLink
-                                    state={'My Art'}
-                                    to={`/myArts/${user?.email || user.providerData[0].email}`}
-                                    className={
-                                        'mt-2 flex items-center gap-2 py-1 text-sm font-bold  uppercase text-blue-600 hover:text-amber-700 hover:underline'
-                                    }
-                                >
-                                    <BsBarChartSteps className='text-lg' />
-                                    My Arts
-                                </NavLink>
                             </div>
                         )}
-                        <div>
-                            <Link
-                                to={'/login'}
-                                className='flex items-center gap-3 rounded-sm border-black py-1 font-bold uppercase hover:text-red-700 '
+                        <Link
+                            to={'/login'}
+                            className='flex items-center gap-3 rounded-sm border-black py-1 font-bold uppercase hover:text-red-700 '
+                        >
+                            <FiUserCheck className='text-xl' />
+                            Login
+                        </Link>
+                        <Link
+                            to={'/registration'}
+                            className='flex items-center gap-3 rounded-sm border-black py-1  font-bold uppercase hover:text-red-700'
+                        >
+                            <FaUserEdit className='text-xl' /> Register
+                        </Link>
+                        {user && (
+                            <div
+                                onClick={logOut}
+                                className='flex cursor-pointer items-center gap-3 rounded-sm border-black py-1 font-bold uppercase hover:text-red-700 '
                             >
-                                <FiUserCheck className='text-xl' />
-                                Login
-                            </Link>
-                            <Link
-                                to={'/registration'}
-                                className='flex items-center gap-3 rounded-sm border-black py-1  font-bold uppercase hover:text-red-700'
-                            >
-                                <FaUserEdit className='text-xl' /> Register
-                            </Link>
-                            {user && (
-                                <div
-                                    onClick={logOut}
-                                    className='flex cursor-pointer items-center gap-3 rounded-sm border-black py-1 font-bold uppercase hover:text-red-700 '
-                                >
-                                    <MdLogout className='text-xl' />
-                                    LogOut
-                                </div>
-                            )}
-                        </div>
+                                <MdLogout className='text-xl' />
+                                LogOut
+                            </div>
+                        )}
                     </div>
                 </Tooltip>
             </div>
