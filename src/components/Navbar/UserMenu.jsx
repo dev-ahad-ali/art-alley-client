@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { PiUserCirclePlusDuotone } from 'react-icons/pi';
 import { Tooltip } from 'react-tooltip';
