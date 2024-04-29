@@ -1,12 +1,13 @@
-import { useLoaderData } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ExhibitionCard from '../components/Cards/ExhibitionCard';
 import { useEffect, useState } from 'react';
 import { ImMenu2 } from 'react-icons/im';
 import UpdateModal from '../components/UpdateModal/UpdateModal';
+import axios from 'axios';
+import { url } from '../Utils/Url';
 
 const MyArts = () => {
-    const data = useLoaderData();
-    const artData = data.data;
+    const params = useParams();
     const [arts, setArts] = useState([]);
     const [category, setCategory] = useState('all');
     const [myArtLoading, setMyArtLoading] = useState(true);
@@ -15,26 +16,32 @@ const MyArts = () => {
     const [refetch, setRefetch] = useState(true);
 
     useEffect(() => {
-        if (category === 'all') {
+        const getData = async () => {
+            const data = await axios.get(`${url}/myArt/${params.email}`);
+            const artData = data.data;
             setArts(artData);
-            setMyArtLoading(false);
-        }
-        if (category === 'customizable') {
-            setMyArtLoading(true);
-            const customizableArt = artData.filter(
-                (art) => art.customization === 'yes',
-            );
-            setArts(customizableArt);
-            setMyArtLoading(false);
-        }
-        if (category === 'not') {
-            const notCustomizableArt = artData.filter(
-                (art) => art.customization === 'no',
-            );
-            setArts(notCustomizableArt);
-            setMyArtLoading(false);
-        }
-    }, [artData, category]);
+            if (category === 'all') {
+                setArts(artData);
+                setMyArtLoading(false);
+            }
+            if (category === 'customizable') {
+                setMyArtLoading(true);
+                const customizableArt = artData.filter(
+                    (art) => art.customization === 'yes',
+                );
+                setArts(customizableArt);
+                setMyArtLoading(false);
+            }
+            if (category === 'not') {
+                const notCustomizableArt = artData.filter(
+                    (art) => art.customization === 'no',
+                );
+                setArts(notCustomizableArt);
+                setMyArtLoading(false);
+            }
+        };
+        getData();
+    }, [params.email, category, refetch]);
 
     if (myArtLoading) {
         return <span className='loading loading-ring loading-lg'></span>;

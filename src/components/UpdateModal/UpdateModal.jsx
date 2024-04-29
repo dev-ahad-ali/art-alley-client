@@ -62,8 +62,8 @@ const UpdateModal = ({
         axios.patch(`${url}/update/${_id}`, data).then((result) => {
             if (result?.data?.modifiedCount > 0) {
                 toast.success('Art Updated successfully');
-                // setRefetch(!refetch);
-                window.location.reload();
+                setRefetch(!refetch);
+                // window.location.reload();
             }
         });
         console.log(refetch);
