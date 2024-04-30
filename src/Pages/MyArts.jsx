@@ -56,8 +56,10 @@ const MyArts = () => {
 
     return (
         <>
-            <section className='relative mx-auto max-w-7xl px-4 py-16'>
-                <h2 className='text-center font-yeseva text-[80px]'>My arts</h2>
+            <section className='relative mx-auto max-w-7xl px-4 py-8 lg:py-16'>
+                <h2 className='text-center font-yeseva text-4xl leading-normal lg:text-[80px]'>
+                    My arts
+                </h2>
                 <div className='mt-4 flex justify-center'>
                     <div className='dropdown dropdown-end'>
                         <div
@@ -108,7 +110,7 @@ const MyArts = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='mt-6 grid grid-cols-3 gap-x-4 gap-y-8'>
+                <div className='mt-6 grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3'>
                     {arts.map((art) => (
                         <ExhibitionCard
                             key={art._id}
