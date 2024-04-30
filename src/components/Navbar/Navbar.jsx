@@ -66,7 +66,7 @@ const Navbar = () => {
 
     return (
         <div
-            className={`fixed z-20 grid w-full grid-cols-3 items-center border-b bg-white px-5 py-4 dark:bg-black`}
+            className={`fixed z-20 flex w-full items-center justify-between border-b bg-white px-2 py-2 md:grid md:grid-cols-3 md:px-5 md:py-4 dark:bg-black`}
         >
             <div className='lg:hidden'>
                 <div className='dropdown'>
@@ -105,26 +105,26 @@ const Navbar = () => {
             </div>
             <Link
                 to={'/'}
-                className='flex items-center justify-center font-lobster text-4xl font-bold text-amber-900'
+                className='flex items-center justify-center font-lobster text-xl font-bold text-amber-900 md:text-4xl'
             >
                 <img
                     src='https://i.ibb.co/FmpLrHr/logo.png'
                     alt=''
-                    className='relative bottom-2 h-6 w-6'
+                    className='relative bottom-2 h-4 w-4 md:h-6 md:w-6'
                 />
                 <span className='relative'>ArtAlley</span>
             </Link>
-            <div className='flex items-center justify-end gap-4'>
+            <div className='flex items-center justify-end gap-2 md:gap-4'>
                 <NavLink
                     state={'My Art'}
                     to={`/myArts/${user?.email || user?.providerData[0]?.email}`}
                     className={({ isActive }) =>
                         isActive
-                            ? 'me-2 flex items-center gap-2 py-1 text-sm font-bold  uppercase text-amber-700 underline'
-                            : 'me-2 flex items-center gap-2 py-1 text-sm font-bold  uppercase hover:text-amber-700 hover:underline'
+                            ? 'me-2 flex items-center gap-2 py-1 text-xs font-bold uppercase  text-amber-700 underline md:text-sm'
+                            : 'me-2 flex items-center gap-2 py-1 text-xs font-bold uppercase  hover:text-amber-700 hover:underline md:text-sm'
                     }
                 >
-                    <BsBarChartSteps className='text-lg' />
+                    <BsBarChartSteps className='md:text-lg' />
                     My Arts
                 </NavLink>
                 <UserMenu />

@@ -5,17 +5,17 @@ const BannerSlide = ({ slide }) => {
                 Highlights
             </p>
             <div
-                className={`mx-auto flex max-w-7xl items-center justify-between bg-white dark:bg-black`}
+                className={`mx-auto flex max-w-7xl flex-col items-center justify-between bg-white lg:flex-row dark:bg-black`}
             >
-                <div>
-                    <h2 className='absolute top-16 z-10 font-yeseva text-[80px]'>
+                <div className='order-2 mt-3 lg:-order-1 lg:mt-0'>
+                    <h2 className='top-16 z-10 font-yeseva text-4xl md:text-[50px] lg:absolute lg:text-[80px]'>
                         {slide.itemName}
                     </h2>
-                    <p className='max-w-[400px]'>
+                    <p className='mt-3 min-h-[150px] max-w-[400px] lg:mt-0 lg:min-h-max'>
                         {slide?.description.slice(0, 180)}....
                     </p>
                 </div>
-                <div className='h-[580px] w-[870px]'>
+                <div className='lg:h-[580px] lg:w-[870px]'>
                     <img
                         src={slide.imageUrl}
                         alt=''

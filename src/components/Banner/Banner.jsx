@@ -17,7 +17,7 @@ const Banner = ({ artData, dataLoading }) => {
         );
     }
     return (
-        <div className='px-4 py-16'>
+        <div className='px-4 py-6 md:py-16'>
             <Swiper
                 spaceBetween={30}
                 effect={'fade'}

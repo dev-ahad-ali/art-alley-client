@@ -24,10 +24,10 @@ const Home = () => {
             <Banner artData={artData} dataLoading={dataLoading} />
             <Exhibition artData={artData} />
             <section>
-                <h2 className='mt-16 text-center font-yeseva text-[80px]'>
+                <h2 className='mt-6 text-center font-yeseva text-4xl md:mt-16 md:text-[80px]'>
                     Categories
                 </h2>
-                <div className='mx-auto mt-16 grid max-w-7xl grid-cols-3 gap-4 px-4'>
+                <div className='mx-auto mt-6 grid max-w-7xl grid-cols-1 gap-4 px-4 md:mt-16 md:grid-cols-2 lg:grid-cols-3'>
                     <LandscapePainting />
                     <PortraitDrawing />
                     <WatercolourPainting />

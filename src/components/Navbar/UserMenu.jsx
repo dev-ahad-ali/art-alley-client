@@ -17,7 +17,7 @@ const UserMenu = () => {
                         <span className='loading loading-infinity text-success'></span>
                     ) : user ? (
                         <div className='avatar cursor-pointer'>
-                            <div className='w-8 rounded-full ring ring-amber-800 ring-offset-2 ring-offset-base-100'>
+                            <div className='w-6 rounded-full ring ring-amber-800 ring-offset-2 ring-offset-base-100 md:w-8'>
                                 <img src={user?.photoURL} />
                             </div>
                         </div>
