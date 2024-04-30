@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import { url } from '../Utils/Url';
 
 const AddArt = () => {
     const {
@@ -24,7 +25,7 @@ const AddArt = () => {
         //     userName,
         //     stockStatus,
         // } = data;
-        axios.post('http://localhost:5000/addArt', data).then((result) => {
+        axios.post(`${url}/addArt`, data).then((result) => {
             if (result?.data?.insertedId) {
                 toast.success('Art added successfully');
             }
