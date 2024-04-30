@@ -25,8 +25,8 @@ const ArtDetails = () => {
 
     return (
         <div className='mx-auto mt-12 max-w-7xl px-4 pb-8'>
-            <div className='grid grid-cols-3 gap-4 '>
-                <div className='col-span-2'>
+            <div className='grid grid-cols-1 gap-4 lg:grid-cols-3 '>
+                <div className='lg:col-span-2'>
                     <img src={imageUrl} alt='' />
                 </div>
                 <div className='col-span-1'>
