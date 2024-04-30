@@ -10,6 +10,8 @@ import OilPainting from '../components/Subcategories/OilPainting';
 import CharcoalSketching from '../components/Subcategories/CharcoalSketching';
 import CartoonDrawing from '../components/Subcategories/CartoonDrawing';
 import { Zoom } from 'react-awesome-reveal';
+import Sponsors from '../components/Sponsors/Sponsors';
+import Services from '../components/Services/Services';
 
 const Home = () => {
     const [artData, setArtData] = useState([]);
@@ -23,6 +25,7 @@ const Home = () => {
     return (
         <>
             <Banner artData={artData} dataLoading={dataLoading} />
+            <Services />
             <Exhibition artData={artData} />
             <section>
                 <h2 className='mt-6 text-center font-yeseva text-4xl md:mt-16 md:text-[80px]'>
@@ -49,6 +52,7 @@ const Home = () => {
                     </Zoom>
                 </div>
             </section>
+            <Sponsors />
         </>
     );
 };

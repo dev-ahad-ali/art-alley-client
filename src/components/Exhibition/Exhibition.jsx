@@ -3,7 +3,7 @@ import ExhibitionCard from '../Cards/ExhibitionCard';
 
 const Exhibition = ({ artData }) => {
     return (
-        <section className='mx-auto max-w-7xl px-4'>
+        <section className='mx-auto max-w-7xl px-4 py-4'>
             <h2 className='text-center font-yeseva text-4xl md:text-[80px] lg:mt-8'>
                 <Fade duration={200} cascade>
                     Exhibition
