@@ -62,7 +62,7 @@ const Login = () => {
     return (
         <div className=' grid min-h-[calc(100vh-102px)] place-items-center'>
             <form
-                className='mx-auto w-[400px] space-y-6 rounded-lg bg-slate-400/40 px-4 py-8 shadow-xl dark:text-black'
+                className='mx-auto space-y-6 rounded-lg bg-slate-400/40 px-4 py-8 shadow-xl md:w-[400px] dark:text-black'
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <h2 className='text-center font-yeseva text-4xl dark:text-white'>
