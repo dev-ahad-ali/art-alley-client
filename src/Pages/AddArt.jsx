@@ -39,7 +39,7 @@ const AddArt = () => {
             </h2>
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className='mt-8 grid grid-cols-2 gap-3'
+                className='mt-8 grid grid-cols-1 gap-3 md:grid-cols-2'
             >
                 <div className='space-y-3'>
                     <input
@@ -212,7 +212,7 @@ const AddArt = () => {
                 <input
                     type='submit'
                     value='Add'
-                    className='btn btn-accent col-span-2 mt-3 text-xl font-bold text-white dark:bg-white dark:text-black'
+                    className='btn btn-accent mt-3 text-xl font-bold text-white md:col-span-2 dark:bg-white dark:text-black'
                 />
             </form>
         </div>
