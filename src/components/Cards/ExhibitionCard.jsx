@@ -96,6 +96,7 @@ const ExhibitionCard = ({
                     <Link
                         className='flex items-center gap-2 font-semibold text-blue-600 hover:underline'
                         to={`/allArts/${_id}`}
+                        state={`${itemName}`}
                     >
                         {' '}
                         View Details

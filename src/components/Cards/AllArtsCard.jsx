@@ -28,7 +28,7 @@ const AllArtsCard = ({ art }) => {
                         {rating}
                     </p>
                     <div className=''>
-                        <Link to={`/allArts/${_id}`}>
+                        <Link to={`/allArts/${_id}`} state={`${itemName}`}>
                             {' '}
                             <button className='btn btn-sm mt-3 rounded-full duration-300 hover:scale-110'>
                                 View Details
