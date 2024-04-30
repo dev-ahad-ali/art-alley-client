@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { FaEdit, FaStar } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 
@@ -17,6 +18,11 @@ const ArtDetails = () => {
         userName,
         stockStatus,
     } = art;
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className='mx-auto mt-12 max-w-7xl px-4 pb-8'>
             <div className='grid grid-cols-3 gap-4 '>

@@ -15,7 +15,12 @@ const AllArts = () => {
     }, []);
 
     if (artsLoading) {
-        return <span className='loading loading-infinity '></span>;
+        return (
+            <div className='grid min-h-screen min-w-full place-items-center bg-white'>
+                {' '}
+                <span className='loading loading-ring  w-[120px] text-success'></span>
+            </div>
+        );
     }
 
     return (

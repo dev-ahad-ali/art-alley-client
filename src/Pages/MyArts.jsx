@@ -46,23 +46,13 @@ const MyArts = () => {
     }, [params.email, category, refetch]);
 
     if (myArtLoading) {
-        return <span className='loading loading-ring loading-lg'></span>;
+        return (
+            <div className='grid min-h-screen min-w-full place-items-center bg-white'>
+                {' '}
+                <span className='loading loading-ring  w-[120px] text-success'></span>
+            </div>
+        );
     }
-
-    // const {
-    //     _id,
-    //     imageUrl,
-    //     itemName,
-    //     subcategory,
-    //     description,
-    //     price,
-    //     rating,
-    //     processTime,
-    //     customization,
-    //     email,
-    //     userName,
-    //     stockStatus,
-    // } = art;
 
     return (
         <>

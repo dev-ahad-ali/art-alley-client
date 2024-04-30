@@ -6,7 +6,12 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <span className='loading loading-infinity text-success'></span>;
+        return (
+            <div className='absolute inset-0 z-20 grid min-h-screen w-full place-items-center bg-white'>
+                {' '}
+                <span className='loading loading-infinity w-[48px] text-success'></span>
+            </div>
+        );
     }
 
     if (!user) {
