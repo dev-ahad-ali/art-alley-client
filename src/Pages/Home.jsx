@@ -9,6 +9,7 @@ import WatercolourPainting from '../components/Subcategories/WatercolourPainting
 import OilPainting from '../components/Subcategories/OilPainting';
 import CharcoalSketching from '../components/Subcategories/CharcoalSketching';
 import CartoonDrawing from '../components/Subcategories/CartoonDrawing';
+import { Zoom } from 'react-awesome-reveal';
 
 const Home = () => {
     const [artData, setArtData] = useState([]);
@@ -28,12 +29,24 @@ const Home = () => {
                     Categories
                 </h2>
                 <div className='mx-auto mt-6 grid max-w-7xl grid-cols-1 gap-4 px-4 md:mt-16 md:grid-cols-2 lg:grid-cols-3'>
-                    <LandscapePainting />
-                    <PortraitDrawing />
-                    <WatercolourPainting />
-                    <OilPainting />
-                    <CharcoalSketching />
-                    <CartoonDrawing />
+                    <Zoom>
+                        <LandscapePainting />
+                    </Zoom>
+                    <Zoom delay={250}>
+                        <PortraitDrawing />
+                    </Zoom>
+                    <Zoom delay={300}>
+                        <WatercolourPainting />
+                    </Zoom>
+                    <Zoom delay={450}>
+                        <OilPainting />
+                    </Zoom>
+                    <Zoom delay={550}>
+                        <CharcoalSketching />
+                    </Zoom>
+                    <Zoom delay={650}>
+                        <CartoonDrawing />
+                    </Zoom>
                 </div>
             </section>
         </>

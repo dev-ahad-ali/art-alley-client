@@ -1,3 +1,5 @@
+import { Fade } from 'react-awesome-reveal';
+
 const BannerSlide = ({ slide }) => {
     return (
         <>
@@ -9,7 +11,9 @@ const BannerSlide = ({ slide }) => {
             >
                 <div className='order-2 mt-3 lg:-order-1 lg:mt-0'>
                     <h2 className='top-16 z-10 font-yeseva text-4xl md:text-[50px] lg:absolute lg:text-[80px]'>
-                        {slide.itemName}
+                        <Fade duration={100} cascade>
+                            {slide.itemName}
+                        </Fade>
                     </h2>
                     <p className='mt-3 min-h-[150px] max-w-[400px] lg:mt-0 lg:min-h-max'>
                         {slide?.description.slice(0, 180)}....

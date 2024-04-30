@@ -6,6 +6,7 @@ import UpdateModal from '../components/UpdateModal/UpdateModal';
 import axios from 'axios';
 import { url } from '../Utils/Url';
 import DeleteModal from '../components/DeleteModal/DeleteModal';
+import { Zoom } from 'react-awesome-reveal';
 
 const MyArts = () => {
     const params = useParams();
@@ -112,15 +113,17 @@ const MyArts = () => {
                 </div>
                 <div className='mt-6 grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3'>
                     {arts.map((art) => (
-                        <ExhibitionCard
-                            key={art._id}
-                            art={art}
-                            showModal={showModal}
-                            setShowModal={setShowModal}
-                            setModalData={setModalData}
-                            showDelete={showDelete}
-                            setShowDelete={setShowDelete}
-                        />
+                        <Zoom key={art._id}>
+                            <ExhibitionCard
+                                key={art._id}
+                                art={art}
+                                showModal={showModal}
+                                setShowModal={setShowModal}
+                                setModalData={setModalData}
+                                showDelete={showDelete}
+                                setShowDelete={setShowDelete}
+                            />
+                        </Zoom>
                     ))}
                 </div>
             </section>

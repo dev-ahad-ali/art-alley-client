@@ -6,7 +6,7 @@ const AllArtsCard = ({ art }) => {
     const { _id, imageUrl, itemName, subcategory, rating } = art;
 
     return (
-        <div className='group relative overflow-hidden rounded-xl bg-base-100 shadow-xl '>
+        <div className='group relative h-full overflow-hidden rounded-xl bg-base-100 shadow-xl '>
             <figure className='h-full rounded-xl'>
                 <img
                     className='h-full w-full rounded-xl duration-300 group-hover:scale-110'

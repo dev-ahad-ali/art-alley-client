@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { url } from '../Utils/Url';
 import AllArtsCard from '../components/Cards/AllArtsCard';
+import { Zoom } from 'react-awesome-reveal';
 
 const AllArts = () => {
     const [arts, setArts] = useState([]);
@@ -30,7 +31,9 @@ const AllArts = () => {
             </h2>
             <div className='mx-auto mt-6 grid max-w-7xl grid-cols-1 gap-4 px-4 md:mt-12 md:grid-cols-2 lg:grid-cols-4'>
                 {arts.map((art) => (
-                    <AllArtsCard key={art._id} art={art} />
+                    <Zoom key={art._id}>
+                        <AllArtsCard key={art._id} art={art} />
+                    </Zoom>
                 ))}
             </div>
         </div>
