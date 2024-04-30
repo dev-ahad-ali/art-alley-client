@@ -65,9 +65,9 @@ const UpdateModal = ({
         console.log(refetch);
     };
     return (
-        <div className='fixed top-4 z-10 grid h-screen w-screen place-items-center bg-gray-400/40 md:inset-0'>
+        <div className='fixed top-4 z-10 grid h-screen w-screen place-items-center bg-gray-400/50 md:inset-0'>
             <Zoom duration={300} className='md:w-1/2'>
-                <div className='w-full scroll-auto rounded-xl bg-amber-100 p-4 dark:bg-gray-800'>
+                <div className='w-full scroll-auto rounded-xl bg-blue-100/85 p-4 dark:bg-gray-800/85'>
                     <div className='flex justify-end'>
                         <IoMdCloseCircle
                             onClick={() => setShowModal(!showModal)}

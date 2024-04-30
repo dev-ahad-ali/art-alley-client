@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import { FaEdit, FaStar } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 
@@ -27,7 +28,10 @@ const ArtDetails = () => {
         <div className='mx-auto mt-12 max-w-7xl px-4 pb-8'>
             <div className='grid grid-cols-1 gap-4 lg:grid-cols-3 '>
                 <div className='lg:col-span-2'>
-                    <img src={imageUrl} alt='' />
+                    <Fade direction='left'>
+                        {' '}
+                        <img src={imageUrl} alt='' />
+                    </Fade>
                 </div>
                 <div className='col-span-1'>
                     <h2 className='border-b-2 pb-2 font-yeseva text-4xl'>

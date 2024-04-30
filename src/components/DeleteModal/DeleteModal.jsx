@@ -22,9 +22,9 @@ const DeleteModal = ({
         });
     };
     return (
-        <div className='fixed inset-0 z-10 grid h-screen w-screen place-items-center bg-gray-400/40'>
+        <div className='fixed inset-0 z-10 grid h-screen w-screen place-items-center bg-gray-400/50'>
             <Zoom className='w-4/5 lg:w-1/3' duration={300}>
-                <div className='rounded-xl bg-amber-100  p-4 dark:bg-gray-800'>
+                <div className='rounded-xl bg-blue-100/85  p-4 dark:bg-gray-800/85'>
                     <div className='flex justify-end'>
                         <IoMdCloseCircle
                             onClick={() => setShowDelete(!showDelete)}

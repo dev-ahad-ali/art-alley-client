@@ -27,7 +27,7 @@ const ExhibitionCard = ({
     } = art;
     return (
         <div
-            className={`group overflow-hidden rounded-3xl  bg-yellow-800/30 duration-300 hover:shadow-xl dark:border dark:bg-transparent`}
+            className={`group overflow-hidden rounded-3xl  bg-amber-900/20 duration-300 hover:shadow-xl dark:border dark:bg-transparent`}
         >
             <div className='relative h-[240px]'>
                 <img

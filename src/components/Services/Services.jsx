@@ -5,8 +5,8 @@ import { TbTruckDelivery } from 'react-icons/tb';
 
 const Services = () => {
     return (
-        <section className='my-12 bg-amber-950/65 py-16 text-white dark:bg-gray-500'>
-            <div className='mx-auto grid max-w-7xl grid-cols-4 gap-3 px-5'>
+        <section className='my-6 bg-amber-950/65 py-16 text-white md:my-12 dark:bg-gray-500'>
+            <div className='mx-auto grid max-w-7xl grid-cols-1 gap-3 px-5 md:grid-cols-2 lg:grid-cols-4'>
                 <div className='flex items-center gap-4'>
                     <TbTruckDelivery className='text-[60px] group-hover:text-orange-900' />
                     <div>
