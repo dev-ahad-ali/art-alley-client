@@ -42,7 +42,7 @@ const ArtDetails = () => {
                         <p className='font-bold'>
                             Made in : {processTime} Days
                         </p>
-                        <p className='flex items-center gap-1 text-sm font-bold capitalize text-gray-600 opacity-80'>
+                        <p className='flex items-center gap-1 text-sm font-bold capitalize text-gray-600 opacity-80 dark:text-gray-200'>
                             <FaEdit />
                             Customization : {customization}
                         </p>

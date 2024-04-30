@@ -6,7 +6,7 @@ const SwiperNavigation = () => {
     return (
         <div className='absolute left-1/2 top-1/2 z-10 mx-auto flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-between md:w-full'>
             <button onClick={() => swiper.slidePrev()}>
-                <GrPrevious className='text-[45px] text-black duration-300 hover:text-amber-700' />
+                <GrPrevious className='text-[45px] duration-300 hover:text-amber-700' />
             </button>
             <button onClick={() => swiper.slideNext()}>
                 <GrNext className='text-[45px] duration-300  hover:text-amber-700' />

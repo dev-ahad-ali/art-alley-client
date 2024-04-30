@@ -36,9 +36,11 @@ const Registration = () => {
         <div className=' grid min-h-[calc(100vh-102px)] place-items-center'>
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className='mx-auto w-[400px] space-y-6 rounded-lg bg-slate-400/40 px-4 py-8 shadow-xl'
+                className='mx-auto w-[400px] space-y-6 rounded-lg bg-slate-400/40 px-4 py-8 shadow-xl dark:text-black'
             >
-                <h2 className='text-center font-yeseva text-4xl'>Sign Up</h2>
+                <h2 className='text-center font-yeseva text-4xl dark:text-white'>
+                    Sign Up
+                </h2>
                 <div>
                     <label className='input input-bordered flex items-center gap-2'>
                         <svg
@@ -191,7 +193,7 @@ const Registration = () => {
                     />
                 </div>
                 <div>
-                    <p className='mt-4 text-center font-light'>
+                    <p className='mt-4 text-center font-light dark:text-white'>
                         Already have an account?{' '}
                         <Link
                             to={'/login'}

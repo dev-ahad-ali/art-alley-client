@@ -10,7 +10,7 @@ import SwiperNavigation from './SwiperNavigation';
 const Banner = ({ artData, dataLoading }) => {
     if (dataLoading) {
         return (
-            <div className='grid min-h-screen min-w-full place-items-center bg-white'>
+            <div className='grid min-h-screen min-w-full place-items-center bg-white dark:bg-black'>
                 {' '}
                 <span className='loading loading-ring  w-[120px] text-success'></span>
             </div>

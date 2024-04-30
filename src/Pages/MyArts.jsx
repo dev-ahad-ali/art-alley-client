@@ -47,7 +47,7 @@ const MyArts = () => {
 
     if (myArtLoading) {
         return (
-            <div className='grid min-h-screen min-w-full place-items-center bg-white'>
+            <div className='grid min-h-screen min-w-full place-items-center bg-white dark:bg-black'>
                 {' '}
                 <span className='loading loading-ring  w-[120px] text-success'></span>
             </div>
@@ -63,14 +63,14 @@ const MyArts = () => {
                         <div
                             tabIndex={0}
                             role='button'
-                            className='btn btn-outline m-1'
+                            className='btn btn-outline m-1 dark:text-white'
                         >
                             Sort By Customizability{' '}
                             <ImMenu2 className='text-xl' />
                         </div>
                         <ul
                             tabIndex={0}
-                            className='menu dropdown-content z-[1] w-52 rounded-box border bg-base-100 p-2 shadow-md'
+                            className='menu dropdown-content z-[1] w-52 rounded-box border bg-base-100 p-2 shadow-md dark:text-black'
                         >
                             <li onClick={() => setCategory('all')}>
                                 <label className='flex items-center justify-between'>

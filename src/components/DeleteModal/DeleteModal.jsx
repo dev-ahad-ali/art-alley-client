@@ -22,7 +22,7 @@ const DeleteModal = ({
     };
     return (
         <div className='fixed inset-0 grid h-screen w-screen place-items-center bg-gray-400/40'>
-            <div className='w-1/3 rounded-xl bg-amber-100 p-4'>
+            <div className='w-1/3 rounded-xl  bg-amber-100 p-4 dark:bg-gray-800'>
                 <div className='flex justify-end'>
                     <IoMdCloseCircle
                         onClick={() => setShowDelete(!showDelete)}

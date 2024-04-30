@@ -45,7 +45,7 @@ const AddArt = () => {
                     <input
                         type='text'
                         placeholder='Item Name'
-                        className='input input-bordered w-full '
+                        className='input input-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('itemName', {
                             required: {
                                 value: true,
@@ -61,7 +61,7 @@ const AddArt = () => {
                     <input
                         type='text'
                         placeholder='ImageUrl'
-                        className='input input-bordered w-full '
+                        className='input input-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('imageUrl', {
                             required: {
                                 value: true,
@@ -75,7 +75,7 @@ const AddArt = () => {
                         </p>
                     )}
                     <select
-                        className='select select-bordered w-full '
+                        className='select select-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('subcategory')}
                     >
                         <option value={''} disabled selected>
@@ -101,7 +101,7 @@ const AddArt = () => {
                     <input
                         type='text'
                         placeholder='Price'
-                        className='input input-bordered w-full '
+                        className='input input-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('price', {
                             required: {
                                 value: true,
@@ -117,7 +117,7 @@ const AddArt = () => {
                     <input
                         type='text'
                         placeholder='Rating'
-                        className='input input-bordered w-full '
+                        className='input input-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('rating')}
                     />
                     {errors.rating && (
@@ -126,7 +126,7 @@ const AddArt = () => {
                         </p>
                     )}
                     <select
-                        className='select select-bordered w-full '
+                        className='select select-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('processTime')}
                     >
                         <option value={''} disabled selected>
@@ -141,7 +141,7 @@ const AddArt = () => {
                 </div>
                 <div className='space-y-3'>
                     <select
-                        className='select select-bordered w-full '
+                        className='select select-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('customization')}
                     >
                         <option value={''} disabled selected>
@@ -151,7 +151,7 @@ const AddArt = () => {
                         <option value={'no'}>No</option>
                     </select>
                     <select
-                        className='select select-bordered w-full '
+                        className='select select-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('stockStatus')}
                     >
                         <option value={''} disabled selected>
@@ -163,7 +163,7 @@ const AddArt = () => {
                     <input
                         type='text'
                         placeholder='Email'
-                        className='input input-bordered w-full '
+                        className='input input-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('email', {
                             required: {
                                 value: true,
@@ -179,7 +179,7 @@ const AddArt = () => {
                     <input
                         type='text'
                         placeholder='User Name'
-                        className='input input-bordered w-full '
+                        className='input input-bordered w-full dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('userName', {
                             required: {
                                 value: true,
@@ -195,7 +195,7 @@ const AddArt = () => {
                     <textarea
                         type='text'
                         placeholder='Description'
-                        className='input input-bordered h-[102px] w-full resize-none pt-2'
+                        className='input input-bordered h-[102px] w-full resize-none pt-2 dark:border-white dark:bg-black dark:focus:border-white'
                         {...register('description', {
                             required: {
                                 value: true,
@@ -212,7 +212,7 @@ const AddArt = () => {
                 <input
                     type='submit'
                     value='Add'
-                    className='btn btn-accent col-span-2 mt-3 text-xl font-bold text-white'
+                    className='btn btn-accent col-span-2 mt-3 text-xl font-bold text-white dark:bg-white dark:text-black'
                 />
             </form>
         </div>

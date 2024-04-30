@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
 
     if (loading) {
         return (
-            <div className='absolute inset-0 z-20 grid min-h-screen w-full place-items-center bg-white'>
+            <div className='absolute inset-0 z-20 grid min-h-screen w-full place-items-center bg-white dark:bg-black'>
                 {' '}
                 <span className='loading loading-infinity w-[48px] text-success'></span>
             </div>

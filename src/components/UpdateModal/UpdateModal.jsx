@@ -65,20 +65,20 @@ const UpdateModal = ({
     };
     return (
         <div className='fixed inset-0 grid h-screen w-screen place-items-center bg-gray-400/40'>
-            <div className=' w-1/2 rounded-xl bg-amber-100 p-4'>
+            <div className=' w-1/2 rounded-xl bg-amber-100 p-4 dark:bg-gray-800'>
                 <div className='flex justify-end'>
                     <IoMdCloseCircle
                         onClick={() => setShowModal(!showModal)}
                         className='cursor-pointer text-4xl text-red-700 duration-200 hover:text-red-500'
                     />
                 </div>
-                <h2 className='flex items-center justify-center gap-2 text-center font-yeseva text-2xl text-gray-700 '>
+                <h2 className='flex items-center justify-center gap-2 text-center font-yeseva text-2xl text-gray-700 dark:text-white '>
                     <RiFileEditFill className='text-2xl' />
                     Update : {modalData.itemName}
                 </h2>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className='mt-8 grid grid-cols-2 gap-4'
+                    className='mt-8 grid grid-cols-2 gap-4 dark:text-black'
                 >
                     <div className='space-y-3'>
                         <input
@@ -177,7 +177,7 @@ const UpdateModal = ({
                         <input
                             type='submit'
                             value='Update'
-                            className='btn btn-warning font-bold uppercase text-white'
+                            className='btn btn-warning font-bold uppercase text-white dark:bg-blue-400'
                         />
                     </div>
                 </form>

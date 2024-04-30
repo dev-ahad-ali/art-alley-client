@@ -2,6 +2,7 @@ import { FaEdit, FaStar } from 'react-icons/fa';
 import { GrFormNextLink } from 'react-icons/gr';
 import { RiDeleteBin2Fill, RiFileEditFill } from 'react-icons/ri';
 import { Link, useLocation } from 'react-router-dom';
+// import useTheme from '../../Hooks/useTheme';
 
 const ExhibitionCard = ({
     art,
@@ -11,6 +12,7 @@ const ExhibitionCard = ({
     showDelete,
     setShowDelete,
 }) => {
+    // const { theme } = useTheme();
     const location = useLocation();
     const {
         imageUrl,
@@ -24,7 +26,9 @@ const ExhibitionCard = ({
         customization,
     } = art;
     return (
-        <div className='group overflow-hidden rounded-3xl bg-yellow-800 bg-opacity-30 duration-300 hover:shadow-xl'>
+        <div
+            className={`group overflow-hidden rounded-3xl  bg-yellow-800/30 duration-300 hover:shadow-xl dark:border dark:bg-transparent`}
+        >
             <div className='relative h-[240px]'>
                 <img
                     className='h-full w-full rounded-t-3xl duration-300 group-hover:scale-110'
@@ -65,10 +69,10 @@ const ExhibitionCard = ({
             </div>
             <div className='p-4'>
                 <div className='flex items-center justify-between'>
-                    <div className='badge badge-neutral badge-outline p-3'>
+                    <div className='badge badge-neutral badge-outline p-3 dark:badge-ghost'>
                         {subcategory}
                     </div>
-                    <p className='flex items-center gap-1 text-sm font-bold capitalize text-gray-600 opacity-80'>
+                    <p className='flex items-center gap-1 text-sm font-bold capitalize text-gray-600 opacity-80 dark:text-white'>
                         <FaEdit />
                         Customization : {customization}
                     </p>
@@ -79,7 +83,7 @@ const ExhibitionCard = ({
                         By: {userName}
                     </p>
                 </div>
-                <div className='mt-6 flex items-center justify-between rounded-full bg-gray-300 px-2 shadow-xl'>
+                <div className='mt-6 flex items-center justify-between rounded-full bg-gray-300 px-2 shadow-xl dark:text-black'>
                     <p className='flex items-center gap-3'>
                         <span>
                             <FaStar className='text-amber-500' />

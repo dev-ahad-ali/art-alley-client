@@ -4,7 +4,9 @@ const BannerSlide = ({ slide }) => {
             <p className='mx-auto -mb-8 max-w-7xl font-lobster text-xl underline'>
                 Highlights
             </p>
-            <div className='mx-auto flex max-w-7xl items-center justify-between bg-white'>
+            <div
+                className={`mx-auto flex max-w-7xl items-center justify-between bg-white dark:bg-black`}
+            >
                 <div>
                     <h2 className='absolute top-16 z-10 font-yeseva text-[80px]'>
                         {slide.itemName}

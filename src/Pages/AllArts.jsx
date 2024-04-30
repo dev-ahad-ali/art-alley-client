@@ -12,11 +12,11 @@ const AllArts = () => {
             setArts(result.data);
             setArtsLoading(false);
         });
+        window.scrollTo(0, 0);
     }, []);
-
     if (artsLoading) {
         return (
-            <div className='grid min-h-screen min-w-full place-items-center bg-white'>
+            <div className='grid min-h-screen min-w-full place-items-center bg-white dark:bg-black'>
                 {' '}
                 <span className='loading loading-ring  w-[120px] text-success'></span>
             </div>

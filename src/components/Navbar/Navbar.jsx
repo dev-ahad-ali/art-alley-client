@@ -5,9 +5,21 @@ import { DiGhostSmall } from 'react-icons/di';
 import UserMenu from './UserMenu';
 import { BsBarChartSteps } from 'react-icons/bs';
 import useAuth from '../../Hooks/useAuth';
+// import { useEffect, useState } from 'react';
+// import useTheme from '../../Hooks/useTheme';
 
 const Navbar = () => {
     const { user } = useAuth();
+    // const { theme, handleToggle } = useTheme();
+    const handleToggle = (e) => {
+        if (e.target.checked) {
+            // setTheme('dark');
+            document.querySelector('html').classList.add('dark');
+        } else {
+            // setTheme('light');
+            document.querySelector('html').classList.remove('dark');
+        }
+    };
     const navLinks = (
         <>
             <li>
@@ -15,8 +27,8 @@ const Navbar = () => {
                     to={'/'}
                     className={({ isActive }) =>
                         isActive
-                            ? 'flex items-center gap-1 bg-white text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
-                            : 'flex items-center gap-1 bg-white text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
+                            ? 'flex items-center gap-1 bg-transparent text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
+                            : 'flex items-center gap-1 bg-transparent text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
                     }
                 >
                     <IoIosHome className='text-xl' />
@@ -28,8 +40,8 @@ const Navbar = () => {
                     to={'/allArts'}
                     className={({ isActive }) =>
                         isActive
-                            ? 'flex items-center gap-1 bg-white text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
-                            : 'flex items-center gap-1 bg-white text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
+                            ? 'flex items-center gap-1 bg-transparent text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
+                            : 'flex items-center gap-1 bg-transparent text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
                     }
                 >
                     <DiGhostSmall className='text-xl' />
@@ -41,8 +53,8 @@ const Navbar = () => {
                     to={'/addArt'}
                     className={({ isActive }) =>
                         isActive
-                            ? 'flex items-center gap-1 bg-white text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
-                            : 'flex items-center gap-1 bg-white text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
+                            ? 'flex items-center gap-1 bg-transparent text-sm font-semibold uppercase text-amber-500 duration-300 hover:bg-transparent'
+                            : 'flex items-center gap-1 bg-transparent text-sm font-semibold uppercase duration-300 hover:bg-transparent hover:text-amber-500'
                     }
                 >
                     <MdLibraryAdd className='text-xl' />
@@ -53,7 +65,9 @@ const Navbar = () => {
     );
 
     return (
-        <div className='fixed z-20 grid w-full grid-cols-3 items-center border-b bg-white px-5 py-4'>
+        <div
+            className={`fixed z-20 grid w-full grid-cols-3 items-center border-b bg-white px-5 py-4 dark:bg-black`}
+        >
             <div className='lg:hidden'>
                 <div className='dropdown'>
                     <div
@@ -116,8 +130,8 @@ const Navbar = () => {
                 <UserMenu />
                 <label className='grid cursor-pointer place-items-center'>
                     <input
+                        onChange={handleToggle}
                         type='checkbox'
-                        value='synthwave'
                         className='theme-controller toggle col-span-2 col-start-1 row-start-1 bg-base-content'
                     />
                     <svg
